@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Fundamentals Quiz</title>
+<link rel="stylesheet" href="Quiz.css">
+</head>
+
+<body>
+
+<!-- WELCOME -->
+<div class="overlay" id="welcomePopup">
+  <div class="popup">
+    <h2>Welcome to Online Quiz</h2>
+    <p>Please read instructions carefully before starting.</p>
+    <button class="btn" onclick="openInstructions()">Next</button>
+  </div>
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="overlay" id="instructionPopup" style="display:none;">
+  <div class="popup">
+    <h2>Quiz Instructions</h2>
+    <p style="text-align:left;font-size:16px;">
+      • Total Questions: 10<br><br>
+      • Each question has 15 seconds<br><br>
+      • No negative marking<br><br>
+      • Answer cannot be changed<br><br>
+      • Do not refresh or close browser
+    </p>
+    <button class="btn" onclick="openLogin()">I Understand</button>
+  </div>
+</div>
+
+<!-- LOGIN -->
+<div class="overlay" id="loginPopup" style="display:none;">
+  <div class="popup">
+    <h2>Candidate Login</h2>
+    <input type="email" id="email" placeholder="Enter Email ID">
+    <button class="btn" onclick="login()">Login</button>
+    <p id="loginMsg"></p>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<div id="countdownScreen">3</div>
+
+<!-- QUIZ -->
+<div class="container" id="quizBox" style="display:none;">
+  <div class="info">
+    <span id="count"></span>
+    <span>⏱ <span id="timer">15</span>s</span>
+  </div>
+  <h2 id="question"></h2>
+  <div id="options"></div>
+</div>
+
+<!-- RESULT -->
+<div class="container" id="resultBox" style="display:none;">
+  <h2>Quiz Result</h2>
+  <p id="scoreText"></p>
+  <p id="gradeText"></p>
+  <div id="certificate"></div>
+
+  <button class="btn" onclick="restartQuiz()">Restart Quiz</button>
+  <button class="btn" style="background:#6b7280;" onclick="endQuiz()">End Quiz</button>
+</div>
+
+<script src="Quiz.js"></script>
+
+</body>
+</html>
